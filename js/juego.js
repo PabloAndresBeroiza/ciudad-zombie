@@ -104,7 +104,7 @@ Juego.buclePrincipal = function() {
 Juego.update = function() {
   this.calcularAtaques();
   this.moverEnemigos();
-}
+};
 // Captura las teclas y si coincide con alguna de las flechas tiene que
 // hacer que el jugador principal se mueva
 Juego.capturarMovimiento = function(tecla) {
@@ -113,16 +113,16 @@ Juego.capturarMovimiento = function(tecla) {
   var velocidad = this.jugador.velocidad;
 
   // El movimiento esta determinado por la velocidad del jugador
-  if (tecla == 'izq') {
+  if (tecla === 'izq') {
     movX = -velocidad;
   }
-  if (tecla == 'arriba') {
+  if (tecla === 'arriba') {
     movY = -velocidad;
   }
-  if (tecla == 'der') {
+  if (tecla === 'der') {
     movX = velocidad;
   }
-  if (tecla == 'abajo') {
+  if (tecla === 'abajo') {
     movY = velocidad;
   }
 
@@ -131,7 +131,8 @@ Juego.capturarMovimiento = function(tecla) {
     /* Aca tiene que estar la logica para mover al jugador invocando alguno
     de sus metodos  */
 
-    /* COMPLETAR */
+    /* COMPLETAR OK*/
+    this.jugador.mover(movX, movY, tecla);
   }
 };
 
@@ -146,7 +147,7 @@ Juego.dibujar = function() {
   utilizando al dibujante y los metodos que nos brinda.
   "Dibujante dibuja al jugador" */
 
-  /* Completar */
+  /* Completar OK*/
     Dibujante.dibujarEntidad(Jugador);
   // Se recorren los obstaculos de la carretera pintandolos
   this.obstaculosCarretera.forEach(function(obstaculo) {
