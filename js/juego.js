@@ -113,18 +113,22 @@ Juego.capturarMovimiento = function(tecla) {
   var velocidad = this.jugador.velocidad;
 
   // El movimiento esta determinado por la velocidad del jugador
-  if (tecla === 'izq') {
-    movX = -velocidad;
-  }
-  if (tecla === 'arriba') {
-    movY = -velocidad;
-  }
-  if (tecla === 'der') {
-    movX = velocidad;
-  }
-  if (tecla === 'abajo') {
-    movY = velocidad;
-  }
+    if (tecla === 'izq') {
+        this.jugador.girar(15, 30, 'imagenes/auto_rojo_izquierda.png');
+        movX = -velocidad;
+    }
+    if (tecla === 'arriba') {
+        this.jugador.girar(30, 15, 'imagenes/auto_rojo_arriba.png');
+        movY = -velocidad;
+    }
+    if (tecla === 'der') {
+        this.jugador.girar(15, 30, 'imagenes/auto_rojo_derecha.png');
+        movX = velocidad;
+    }
+    if (tecla === 'abajo') {
+        this.jugador.girar(30, 15, 'imagenes/auto_rojo_abajo.png');
+        movY = velocidad;
+    }
 
   // Si se puede mover hacia esa posicion hay que hacer efectivo este movimiento
   if (this.chequearColisiones(movX + this.jugador.x, movY + this.jugador.y)) {
