@@ -60,6 +60,8 @@ var Juego = {
         new ZombieCaminante('imagenes/zombie1.png', 100, 352, 10, 10, 0.5, { desdeX: 10, hastaX: 950, desdeY: 350, hastaY: 410 }),
         new ZombieCaminante('imagenes/zombie3.png', 500, 432, 10, 10, 0.75, { desdeX: 10, hastaX: 950, desdeY: 430, hastaY: 470 }),
         new ZombieCaminante('imagenes/zombie1.png', 521, 472, 10, 10, 0.5, { desdeX: 380, hastaX: 560, desdeY: 460, hastaY: 490 }),
+        new ZombieConductor('imagenes/tren_vertical.png', 644, 0, 30, 90, 6, {desdeX: 644, hastaX: 644, desdeY: 0, hastaY: 450}, 'v'),
+        new ZombieConductor('imagenes/tren_vertical.png', 674, 0, 30, 90, 5, {desdeX: 670, hastaX: 680, desdeY: 0, hastaY: 450}, 'v'),
         new ZombieConductor('imagenes/tren_horizontal.png', 400, 322, 90, 30, 5, { desdeX: 10, hastaX: 850, desdeY: 320, hastaY: 330 }, 'h')
         
     
