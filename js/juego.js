@@ -60,8 +60,8 @@ var Juego = {
         new ZombieCaminante('imagenes/zombie1.png', 100, 352, 10, 10, 0.5, { desdeX: 10, hastaX: 950, desdeY: 350, hastaY: 410 }),
         new ZombieCaminante('imagenes/zombie3.png', 500, 432, 10, 10, 0.75, { desdeX: 10, hastaX: 950, desdeY: 430, hastaY: 470 }),
         new ZombieCaminante('imagenes/zombie1.png', 521, 472, 10, 10, 0.5, { desdeX: 380, hastaX: 560, desdeY: 460, hastaY: 490 }),
-        new ZombieConductor('imagenes/tren_vertical.png', 644, 0, 30, 90, 6, {desdeX: 644, hastaX: 644, desdeY: 0, hastaY: 450}, 'v'),
-        new ZombieConductor('imagenes/tren_vertical.png', 674, 0, 30, 90, 5, {desdeX: 670, hastaX: 680, desdeY: 0, hastaY: 450}, 'v'),
+        new ZombieConductor('imagenes/tren_vertical.png', 644, 0, 30, 90, 4, {desdeX: 644, hastaX: 644, desdeY: 0, hastaY: 450}, 'v'),
+        new ZombieConductor('imagenes/tren_vertical.png', 674, 0, 30, 90, 3, {desdeX: 670, hastaX: 680, desdeY: 0, hastaY: 450}, 'v'),
         new ZombieConductor('imagenes/tren_horizontal.png', 400, 322, 90, 30, 5, { desdeX: 10, hastaX: 850, desdeY: 320, hastaY: 330 }, 'h'),
         new ZombieTroll('imagenes/TrollFace.png', 400, 110, 30, 30, 1, {desdeX: 10, hastaX: 950, desdeY: 240, hastaY: 245})
         
@@ -168,6 +168,9 @@ Juego.dibujar = function () {
     //Se pinta la imagen de fondo segun el estado del juego
     this.dibujarFondo();
 
+    // Dibuja la línea de llegada
+    Dibujante.dibujarRectangulo("#FFFF00", 760, 509, 126, 30);
+
 
     /* Aca hay que agregar la logica para poder dibujar al jugador principal
      utilizando al dibujante y los metodos que nos brinda.
@@ -188,10 +191,10 @@ Juego.dibujar = function () {
 
     // El dibujante dibuja las vidas del jugador
     var tamanio = this.anchoCanvas / this.vidasInicial;
-    Dibujante.dibujarRectangulo('white', 0, 0, this.anchoCanvas, 8);
+    Dibujante.dibujarRectangulo('white', 0, 0, this.anchoCanvas, 10);
     for (var i = 0; i < this.jugador.vidas; i++) {
         var x = tamanio * i;
-        Dibujante.dibujarRectangulo('red', x, 0, tamanio, 8);
+        Dibujante.dibujarRectangulo('red', x, 0, tamanio, 10);
     }
 };
 
