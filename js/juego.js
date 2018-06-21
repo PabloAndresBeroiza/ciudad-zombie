@@ -62,7 +62,8 @@ var Juego = {
         new ZombieCaminante('imagenes/zombie1.png', 521, 472, 10, 10, 0.5, { desdeX: 380, hastaX: 560, desdeY: 460, hastaY: 490 }),
         new ZombieConductor('imagenes/tren_vertical.png', 644, 0, 30, 90, 6, {desdeX: 644, hastaX: 644, desdeY: 0, hastaY: 450}, 'v'),
         new ZombieConductor('imagenes/tren_vertical.png', 674, 0, 30, 90, 5, {desdeX: 670, hastaX: 680, desdeY: 0, hastaY: 450}, 'v'),
-        new ZombieConductor('imagenes/tren_horizontal.png', 400, 322, 90, 30, 5, { desdeX: 10, hastaX: 850, desdeY: 320, hastaY: 330 }, 'h')
+        new ZombieConductor('imagenes/tren_horizontal.png', 400, 322, 90, 30, 5, { desdeX: 10, hastaX: 850, desdeY: 320, hastaY: 330 }, 'h'),
+        new ZombieTroll('imagenes/TrollFace.png', 400, 110, 30, 30, 1, {desdeX: 10, hastaX: 950, desdeY: 240, hastaY: 245})
         
     
     ]
@@ -92,7 +93,8 @@ Juego.iniciarRecursos = function () {
         'imagenes/auto_rojo_derecha.png',
         'imagenes/auto_rojo_izquierda.png',
         'imagenes/auto_verde_abajo.png',
-        'imagenes/auto_verde_derecha.png'
+        'imagenes/auto_verde_derecha.png',
+        'imagenes/TrollFace.png'
     ]);
     Resources.onReady(this.comenzar.bind(Juego));
 };

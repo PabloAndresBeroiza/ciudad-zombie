@@ -3,17 +3,17 @@ modificarlo para hacer que se comporte de la forma que mas te guste.
 Este zombie recibe los mismos parametros que el objeto Enemigo. Podes consultar
 el archivo Enemigo.js para entender que es cada uno. */
 
-var ZombieCaminante = function(sprite, x, y, ancho, alto, velocidad, rangoMov) {
-  /* ZombieCaminante llama al constructor de Enemigo utilizando los parametros
+var ZombieTroll = function(sprite, x, y, ancho, alto, velocidad, rangoMov) {
+  /* ZombieTroll llama al constructor de Enemigo utilizando los parametros
   necesarios */
   Enemigo.call(this, sprite, x, y, ancho, alto, velocidad, rangoMov);
 };
 /* Completamos la creacion del objeto asignando su prototipo y la funcion
 constructor para poder usarla con 'new' al crear nuevos Zombies Caminantes */
-ZombieCaminante.prototype = Object.create(Enemigo.prototype);
-ZombieCaminante.prototype.constructor = ZombieCaminante;
+ZombieTroll.prototype = Object.create(Enemigo.prototype);
+ZombieTroll.prototype.constructor = ZombieTroll;
 
-ZombieCaminante.prototype.mover = function() {
+ZombieTroll.prototype.mover = function() {
   /* Los movimientos estan basados en un numero aleatorio
   La direccion horizontal es siempre la misma y va ondulando verticalmente.
   Esto hasta llegar a sus limites, donde se invierte su direccion horizontal */
@@ -40,8 +40,8 @@ ZombieCaminante.prototype.mover = function() {
 
 /* El ataque lo toma de su prototipo Enemigo que ya implementa un metodo atacar
 haciendole perder 1 vida al jugador. Si se quiere modificar el valor de ataque
-del zombie caminante habra que reimplementar este metodo desde el objeto ZombieCaminante
+del zombie caminante habra que reimplementar este metodo desde el objeto ZombieTroll
 */
-ZombieCaminante.prototype.atacar = function(jugador) {
-  jugador.perderVidas(2);
+ZombieTroll.prototype.atacar = function(jugador) {
+  jugador.perderVidas(1);
 }
